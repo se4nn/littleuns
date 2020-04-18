@@ -1,0 +1,19 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #FEDCD2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 270px;
+  height: 180px;
+}
