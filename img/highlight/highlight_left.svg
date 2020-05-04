@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="58px" viewBox="0 0 32 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>highlight_left</title>
+    <g id="highlight_left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M32.000787,5.81878607 L32.000787,52.0649861 C30.9431693,52.1755776 29.8842298,52.2955488 28.8170087,52.4251305 L27.2091192,52.6267398 C14.0734704,54.3247948 1.98915316,45.4920376 0.218041165,32.8982246 C-1.55307083,20.3044115 7.65970648,8.71856328 20.7953552,7.02050833 L21.9533643,6.87317867 C25.3830195,6.44395143 28.6878126,6.09451327 32.000787,5.81878607 Z" fill="#FEDCD2" fill-rule="nonzero"></path>
+    </g>
+</svg>
