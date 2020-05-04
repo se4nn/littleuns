@@ -1,7 +1,7 @@
 * {
+  font-family: 'Jost*', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Jost*', sans-serif;
 }
 
 body {
@@ -12,19 +12,22 @@ body {
   justify-content: center;
   align-items: center;
   padding: 80px;
+  overflow-x: hidden;
 }
 
 nav, section, footer {
   width: 100%;
+  display: flex;
 }
 
 /* Font Styles */
 
-h1 {
+h2 {
   font-size: 40px;
+  font-weight: 500;
   line-height: 56px;
   color: #252A22;
-  font-weight: 300;
+  margin-bottom: 40px;
 }
 
 /* Font Properties */
@@ -40,7 +43,6 @@ h1, h2, p {
 /* Nav */
 
 nav {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -90,6 +92,42 @@ nav .links a:hover:before {
   background: #FEDCD2;
 }
 
+/* Hero */
+
+section.hero {
+  padding-top: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero h2 {
+  font-weight: 200;
+}
+
+.hero-image-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image-container .tag {
+  position: absolute;
+  left: 120px;
+}
+
+.hero-image {
+  margin-right: -200px;
+  width: 50vw;
+  height: 50vw;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero.pink .hero-image {
+  border: solid 40px #FEEFEB;
+}
+
+
 /* Misc. */
 
 .highlight {
@@ -124,4 +162,48 @@ nav .links a:hover:before {
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
+}
+
+.tag {
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  line-height: 24px;
+  height: 24px;
+  padding: 8px 12px;
+  display: inline-block;
+  position: relative;
+  background: #252A22;
+}
+
+.tag.right {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.tag.right:after {
+  content: " ";
+  background-image: url(./img/tag/tag-right.png);
+  width: 20px;
+  height: 40px;
+  background-size: 20px 40px;
+  position: absolute;
+  top: 0;
+  right: -20px;
+}
+
+.tag.left {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.tag.left:before {
+  content: " ";
+  background-image: url(./img/tag/tag-right.png);
+  width: 20px;
+  height: 40px;
+  background-size: 20px 40px;
+  position: absolute;
+  top: 0;
+  left: -20px;
 }
