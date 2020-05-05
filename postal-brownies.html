@@ -15,20 +15,50 @@
   <nav>
     <a><img class="logo" src="./img/logo.svg" alt="Littleuns Logo" href="#"></a>
     <div class="links">
-      <a href="#"><img class="nav-link-image" src="./img/icons/cupcake_24.svg" alt="Cupcake Icon">Cakes</a>
-      <a href="#"><img class="nav-link-image" src="./img/icons/postal.svg" alt="Envelope Icon">Postal</a>
       <a href="#"><img class="nav-link-image" src="./img/icons/instagram.svg" alt="Instagram Icon">Instagram</a>
     </div>
   </nav>
-  <section class="hero">
-    <h2><span class="highlight">Littleuns</span> is an independent bakery founded by <strong>Tara Geraghty</strong> bringing artisan cakes & bakes to her local community.</h2>
+  <section class="hero product">
+    <div class="description column">
+      <h1>Chocolate Oreo Brownies</h1>
+      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Combined with one of the nation’s favourite biscuits, our Oreo brownies are definitely a little (or a lot) of what you fancy.</p>
+      <div class="buy-container">
+        <p>8 Large Brownies - Posted <span>£18</span></p>
+        <div id="paypal-button-container"></div>
+          <script src="https://www.paypal.com/sdk/js?client-id=ARWXUN6XtHCQVfFkYhspAqRcF7wGQ7R9uIfyp8cH0AclOKq8Ej-PGPD7O7sGG3HDO2yOxBznXlILbRnj&currency=GBP" data-sdk-integration-source="button-factory"></script>
+          <script>
+            paypal.Buttons({
+              style: {
+                shape: 'rect',
+                color: 'black',
+                layout: 'vertical',
+                label: 'paypal',
+                  
+              },
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                      value: '18'
+                    }
+                  }]
+                });
+              },
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+              }
+            }).render('#paypal-button-container');
+          </script>
+      </div>
+    </div>
     <div class="hero-image-container">
-      <span class="tag tag-right">Only £25</span>
-      <img class="hero-image pink" src="./img/cakes/strawberries_cream_hefalump_large.jpg" alt="Stawberries and Cream Hefalump Cake">
+      <img class="hero-image pink" src="./img/cakes/oreo_brownie_large.jpg" alt="Postal Oreo Brownies">
     </div>
   </section>
   <section class="column">
-    <h2 class="center">Our <span class="highlight">Most Popular</span> Cakes</h2>
+    <h2 class="center"><span class="highlight">Coming Soon</span></h2>
     <div class="cake-selection">
       <div class="cake-box green">
         <img class="cake-image" src="./img/cakes/vegan_chocolate_hefalump_small.jpg" alt="Vegan Chocolate Fudge Hefalump Cake">
