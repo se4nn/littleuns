@@ -4,6 +4,37 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: 'Jost*';
+  font-weight: 300;
+  font-display: swap;
+  src: url(./fonts/Jost-300-Light.otf);
+}
+
+@font-face {
+  font-family: 'Jost*';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url(./fonts/Jost-300-LightItalic.ot)
+}
+
+@font-face {
+  font-family: 'Jost*';
+  font-weight: 500;
+  font-display: swap;
+  src: url(./fonts/Jost-500-Medium.otf)
+}
+
+@font-face {
+  font-family: 'Jost*';
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url(./fonts/Jost-500-MediumItalic.otf);
+}
+
+
 body {
   margin: 0 auto;
   background-color: #FFF;
@@ -136,7 +167,7 @@ section.hero {
 }
 
 .hero h2 {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .hero-image-container {
