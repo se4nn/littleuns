@@ -192,8 +192,8 @@ section.hero {
 
 /* Product */
 
-.hero.product .description {
-
+.hero.product .description .tag {
+  margin-bottom: 16px;
 }
 
 .product .description .buy-container {
@@ -205,7 +205,7 @@ section.hero {
   margin: 40px 0;
 }
 
-.product .description .buy-container p {
+.product .description .buy-container p.title {
   font-weight: 500;
   margin-bottom: 40px;
   display: flex;
