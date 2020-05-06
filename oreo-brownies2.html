@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="Littleuns - Cakes & Bakes">
+  <meta name="keywords" content="cakes local hand made handmade henham uk brownies cupcakes muffins tara geraghty">
+  <title>Littleuns - Cakes & Bakes by Tara Geraghty</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./new-styles.css">
+  <link rel='shortcut icon' href='./img/favicon.png' type='image/png'/ >
+</head>
+<body>
+  <nav>
+    <a><img class="logo" src="./img/logo.svg" alt="Littleuns Logo" href="#"></a>
+    <div class="links">
+      <a href="https://instagram.com/littleunscakes"><img class="nav-link-image" src="./img/icons/instagram.svg" alt="Instagram Icon">Instagram</a>
+    </div>
+  </nav>
+  <section class="hero product">
+    <div class="description column">
+      <span class="tag tag-right">Delivered by Post</span>
+      <h1>Chocolate Oreo Brownies</h1>
+      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Combined with one of the nation’s favourite biscuits, our Oreo brownies are definitely a little (or a lot) of what you fancy.</p>
+      <p>Delivered to the UK Only</p>
+      <div class="buy-container">
+        <p class="title">8 Large Brownies - Posted</p>
+        <!-- Load Stripe.js on your website. -->
+        <script src="https://js.stripe.com/v3"></script>
+
+        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+        <button
+          class="buy-button"
+          id="checkout-button-sku_HEDdD279JTuASe"
+          role="link"
+        >
+          Buy Now - £18
+        </button>
+
+        <div id="error-message"></div>
+
+        <script>
+          (function() {
+            var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
+          
+            var checkoutButton = document.getElementById('checkout-button-sku_HEDdD279JTuASe');
+            checkoutButton.addEventListener('click', function () {
+              // When the customer clicks on the button, redirect
+              // them to Checkout.
+              stripe.redirectToCheckout({
+                items: [{sku: 'sku_HEDdD279JTuASe', quantity: 1}],
+          
+                // Do not rely on the redirect to the successUrl for fulfilling
+                // purchases, customers may not always reach the success_url after
+                // a successful payment.
+                // Instead use one of the strategies described in
+                // https://stripe.com/docs/payments/checkout/fulfillment
+                successUrl: 'https://littleunscakes.com/thanks',
+                cancelUrl: 'https://littleunscakes.com/canceled',
+              })
+              .then(function (result) {
+                if (result.error) {
+                  // If `redirectToCheckout` fails due to a browser or network
+                  // error, display the localized error message to your customer.
+                  var displayError = document.getElementById('error-message');
+                  displayError.textContent = result.error.message;
+                }
+              });
+            });
+          })();
+        </script>
+      </div>
+      <p>Allergens</p>
+    </div>
+    <div class="hero-image-container">
+      <img class="hero-image pink" src="./img/cakes/oreo_brownie_large.jpg" alt="Postal Oreo Brownies">
+    </div>
+  </section>
+  <section class="column">
+    <h2 class="center"><span class="highlight">Coming Soon</span></h2>
+    <div class="cake-selection">
+      <div class="cake-box green">
+        <img class="cake-image" src="./img/cakes/vegan_chocolate_hefalump_small.jpg" alt="Vegan Chocolate Fudge Hefalump Cake">
+        <h3>Vegan Chocolate Fudge Hefalump</h3>
+        <span class="price">Only £35</span>
+      </div>
+      <div class="cake-box pink">
+        <img class="cake-image" src="./img/cakes/strawberries_cream_hefalump_small.jpg" alt="Strawberries and Cream Hefalump">
+        <h3>Strawberries and Cream Hefalump</h3>
+        <span class="price">Only £25</span>
+      </div>
+      <div class="cake-box pink">
+        <img class="cake-image" src="./img/cakes/cinamon_banana_small.jpg" alt="Cinamon and Banana Loaf Cake">
+        <h3>Cinamon & Banana Loaf Cake</h3>
+        <span class="price">Only £12</span>
+      </div>
+    </div>
+  </section>
+  
+</body>
