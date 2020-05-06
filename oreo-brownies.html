@@ -58,6 +58,9 @@
               // https://stripe.com/docs/payments/checkout/fulfillment
               successUrl: 'https://littleunscakes.com/success',
               cancelUrl: 'https://littleunscakes.com/canceled',
+              shippingAddressCollection: {
+              allowedCountries: ['GB'],
+              }
             })
             .then(function (result) {
               if (result.error) {
