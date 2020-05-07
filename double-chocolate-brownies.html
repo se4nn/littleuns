@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./new-styles.css">
   <link rel='shortcut icon' href='./img/favicon.png' type='image/png'/ >
+  <script src="https://js.stripe.com/v3"></script>
 </head>
 <body>
   <nav>
@@ -21,8 +22,8 @@
   <section class="hero product">
     <div class="description column">
       <span class="tag tag-right">Delivered by Post</span>
-      <h1>Oreo Cookie Brownies</h1>
-      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Combined with one of the nation’s favourite biscuits, our Oreo brownies are definitely a little (or a lot) of what you fancy.</p>
+      <h1>Double Chocolate Brownies</h1>
+      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Bursting with white and milk chocolate chunks, our double chocolate brownies are guaranteed to satisfy your chocolate cravings.</p>
       <p>Delivered to the UK Only</p>
       <div class="buy-container">
         <p class="title">8 Large Brownies - Posted</p>
@@ -32,10 +33,10 @@
         <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
         <button
           class="buy-button"
-          id="checkout-button-sku_HEAyzyLrfUNs3u"
+          id="checkout-button-sku_HEFPitLqqZTPGj"
           role="link"
         >
-          Buy Now - £18
+          Checkout
         </button>
 
         <div id="error-message"></div>
@@ -44,23 +45,20 @@
         (function() {
           var stripe = Stripe('pk_test_PTkT9qiZsVyjV7yOY9hH85xk00w4fSa7px');
 
-          var checkoutButton = document.getElementById('checkout-button-sku_HEAyzyLrfUNs3u');
+          var checkoutButton = document.getElementById('checkout-button-sku_HEFPitLqqZTPGj');
           checkoutButton.addEventListener('click', function () {
             // When the customer clicks on the button, redirect
             // them to Checkout.
             stripe.redirectToCheckout({
-              items: [{sku: 'sku_HEAyzyLrfUNs3u', quantity: 1}],
+              items: [{sku: 'sku_HEFPitLqqZTPGj', quantity: 1}],
 
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
               // a successful payment.
               // Instead use one of the strategies described in
               // https://stripe.com/docs/payments/checkout/fulfillment
-              successUrl: 'https://littleunscakes.com/thanks',
-              cancelUrl: 'https://littleunscakes.com/',
-              shippingAddressCollection: {
-              allowedCountries: ['GB'],
-              }
+              successUrl: 'https://littleunscakes.com/success',
+              cancelUrl: 'https://littleunscakes.com/canceled',
             })
             .then(function (result) {
               if (result.error) {
@@ -81,7 +79,7 @@
       </details>
     </div>
     <div class="hero-image-container">
-      <img class="hero-image pink" src="./img/cakes/oreo_brownie_large.jpg" alt="Postal Oreo Brownies">
+      <img class="hero-image pink" src="./img/cakes/orange_brownie_large.jpg" alt="Postal Oreo Brownies">
     </div>
   </section>
   <section class="column">
