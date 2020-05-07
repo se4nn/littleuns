@@ -230,6 +230,46 @@ section.hero {
   cursor: pointer;
 }
 
+details {
+  font-weight: 300;
+  font-size: 16px;
+  color: #252A22;
+  line-height: 24px;
+  max-width: 560px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid;
+}
+
+summary {
+  font-size: 24px;
+  line-height: 40px;
+  list-style: none;
+  position: relative;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after {
+  position: absolute;
+  content: " ";
+  width: 24px;
+  height: 24px;
+  right: 0;
+  top: 8px;
+  background: url(./img/icons/arrow_down.svg);
+}
+
+details[open] summary:after {
+  background: url(./img/icons/arrow_up.svg);
+}
+
+details strong {
+  font-size: 24px;
+  line-height: 40px;
+}
+
 /* Cake Box */
 
 .cake-selection {
