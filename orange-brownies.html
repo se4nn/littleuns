@@ -27,38 +27,37 @@
       <p>Delivered to the UK Only</p>
       <div class="buy-container">
         <p class="title">8 Large Brownies - Posted</p>
-        <!-- Load Stripe.js on your website. -->
-        <script src="https://js.stripe.com/v3"></script>
-
-        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
         <button
           class="buy-button"
-          id="checkout-button-sku_HEFPitLqqZTPGj"
+          id="checkout-button-sku_HEi3gU6qEHdVAZ"
           role="link"
         >
-          Checkout
+          Buy Now - £18
         </button>
 
         <div id="error-message"></div>
 
         <script>
         (function() {
-          var stripe = Stripe('pk_test_PTkT9qiZsVyjV7yOY9hH85xk00w4fSa7px');
+          var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
 
-          var checkoutButton = document.getElementById('checkout-button-sku_HEFPitLqqZTPGj');
+          var checkoutButton = document.getElementById('checkout-button-sku_HEi3gU6qEHdVAZ');
           checkoutButton.addEventListener('click', function () {
             // When the customer clicks on the button, redirect
             // them to Checkout.
             stripe.redirectToCheckout({
-              items: [{sku: 'sku_HEFPitLqqZTPGj', quantity: 1}],
-
+              items: [{sku: 'sku_HEi3gU6qEHdVAZ', quantity: 1}],
+              
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
               // a successful payment.
               // Instead use one of the strategies described in
               // https://stripe.com/docs/payments/checkout/fulfillment
               successUrl: 'https://littleunscakes.com/success',
-              cancelUrl: 'https://littleunscakes.com/canceled',
+              cancelUrl: 'https://littleunscakes.com/brownies',
+              shippingAddressCollection: {
+                allowedCountries: ['GB'],
+              }
             })
             .then(function (result) {
               if (result.error) {

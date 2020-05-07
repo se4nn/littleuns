@@ -325,6 +325,7 @@ details strong {
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(100% - 40px) 56px;
+  white-space: nowrap;
 }
 
 .highlight:before {
@@ -359,6 +360,7 @@ details strong {
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(100% - 36px) 42px;
+  white-space: nowrap;
 }
 
 .highlight-small:before {
