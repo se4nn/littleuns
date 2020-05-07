@@ -61,7 +61,7 @@ section {
 
 /* Font Styles */
 
-h1, h2, h3 {
+h1, h2, h3, a {
   color: #252A22;
   font-weight: 500;
 }
@@ -92,9 +92,14 @@ p {
   line-height: 40px;
 }
 
+a {
+  text-decoration: none;
+  color: #252A22;
+}
+
 /* Font Properties */
 
-strong, a, span.highlight {
+strong, span.highlight {
   font-weight: 500;
 }
 
@@ -255,6 +260,22 @@ section.hero {
   margin: 12px auto 0;
 }
 
+/* Thanks */
+
+.thanks {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thanks h1 {
+  max-width: 660px;
+  text-align: center;
+}
+
+.thanks p {
+  line-height: 42px;
+  text-align: center;
+}
 
 /* Misc. */
 
@@ -286,6 +307,40 @@ section.hero {
   width: 32px;
   height: 56px;
   right: -11px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.highlight-small {
+  background: url(./img/highlight/higlight_middle.png);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(100% - 36px) 42px;
+}
+
+.highlight-small:before {
+  content: " ";
+  background: url(./img/highlight/highlight_left.png);
+  background-size: 24px 42px;
+  width: 24px;
+  height: 41px;
+  left: -6px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.highlight-small:after {
+  content: " ";
+  background: url(./img/highlight/highlight_right.png);
+  background-size: 24px 42px;
+  width: 24px;
+  height: 41px;
+  right: -6px;
   position: absolute;
   background-repeat: no-repeat;
   background-position: center;
