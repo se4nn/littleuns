@@ -317,6 +317,21 @@ details strong {
   text-align: center;
 }
 
+/* FAQs */
+
+.column.faqs {
+  align-items: flex-start;
+}
+
+.faqs h3 {
+  text-align: left;
+  margin: 40px 0 8px;
+}
+
+.faqs p {
+  margin: 0 0 8px;
+}
+
 /* Misc. */
 
 .highlight {
