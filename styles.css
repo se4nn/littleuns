@@ -207,7 +207,7 @@ section.hero {
   width: calc(100% - 48px);
   max-width: 516px;
   padding: 24px;
-  margin: 40px 0;
+  margin: 40px 0 24px;
 }
 
 .product .description .buy-container p.title {
@@ -238,6 +238,7 @@ details {
   max-width: 560px;
   padding-bottom: 8px;
   border-bottom: 2px solid;
+  margin: 16px 0;
 }
 
 summary {
@@ -245,6 +246,11 @@ summary {
   line-height: 40px;
   list-style: none;
   position: relative;
+}
+
+details a {
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
 summary::-webkit-details-marker {
