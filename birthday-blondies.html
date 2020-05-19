@@ -21,15 +21,18 @@
   <section class="hero product">
     <div class="description column">
       <span class="tag tag-right">Free 1st class postage</span>
-      <h1>Oreo Cookie Brownies</h1>
-      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Combined with one of the nation’s favourite biscuits, our Oreo brownies are definitely a little (or a lot) of what you fancy.</p>
+      <h1>Browned Butter Birthday Blondies</h1>
+      <p>Want to wish someone a happy birthday? Say it with cake! Our browned butter blondies are filled with chunks of creamy white chocolate, and are finished with rainbow sprinkles and birthday candles.</p>
       <p>Delivered to the UK Only</p>
       <div class="buy-container">
-        <p class="title">8 Large Brownies - Posted</p>
+        <p class="title">Birthday Blondie - Posted</p>
+        <!-- Load Stripe.js on your website. -->
         <script src="https://js.stripe.com/v3"></script>
+
+        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
         <button
           class="buy-button"
-          id="checkout-button-sku_HEDdD279JTuASe"
+          id="checkout-button-sku_HJ5tosQ3q6iYGt"
           role="link"
         >
           Buy Now - £18
@@ -41,13 +44,13 @@
         (function() {
           var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
 
-          var checkoutButton = document.getElementById('checkout-button-sku_HEDdD279JTuASe');
+          var checkoutButton = document.getElementById('checkout-button-sku_HJ5tosQ3q6iYGt');
           checkoutButton.addEventListener('click', function () {
             // When the customer clicks on the button, redirect
             // them to Checkout.
             stripe.redirectToCheckout({
-              items: [{sku: 'sku_HEDdD279JTuASe', quantity: 1}],
-              
+              lineItems: [{price: 'sku_HJ5tosQ3q6iYGt', quantity: 1}],
+              mode: 'payment',
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
               // a successful payment.
@@ -80,11 +83,11 @@
         <summary>Information</summary>
         Make it personal? If these brownies are a gift, you can send a short personalised message, which can be added once you have placed your order.<br>
         Each tray is 6" x 8" and is sliced into 8 large brownies.<br>
-        Keep brownies in a sealed container in a cool, dry place. Brownies have a shelf life for up to five days at room temperature, or you can refrigerate them for up to two weeks (if they last that long!)
+        Keep blondies in a sealed container in a cool, dry place. Brownies have a shelf life for up to five days at room temperature, or you can refrigerate them for up to two weeks (if they last that long!)
       </details>
     </div>
     <div class="hero-image-container">
-      <img class="hero-image pink" src="./img/cakes/oreo_brownie_large.jpg" alt="Postal Oreo Brownies">
+      <img class="hero-image pink" src="./img/cakes/birthday_blondies_large.jpg" alt="Postal Brithday Blondies">
     </div>
   </section>
   <section class="column">

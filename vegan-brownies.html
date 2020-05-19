@@ -21,15 +21,18 @@
   <section class="hero product">
     <div class="description column">
       <span class="tag tag-right">Free 1st class postage</span>
-      <h1>Oreo Cookie Brownies</h1>
-      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. Combined with one of the nation’s favourite biscuits, our Oreo brownies are definitely a little (or a lot) of what you fancy.</p>
+      <h1>Vegan Biscoff Brownies</h1>
+      <p>All of our brownies have a rich and intense chocolate flavour, with a crisp top and fudgy centre. These brownies are packed with Lotus biscuits and swirls of Biscoff spread, and are 100% vegan!</p>
       <p>Delivered to the UK Only</p>
       <div class="buy-container">
         <p class="title">8 Large Brownies - Posted</p>
+        <!-- Load Stripe.js on your website. -->
         <script src="https://js.stripe.com/v3"></script>
+
+        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
         <button
           class="buy-button"
-          id="checkout-button-sku_HEDdD279JTuASe"
+          id="checkout-button-sku_HJ5uiaGLBl7GXq"
           role="link"
         >
           Buy Now - £18
@@ -41,13 +44,13 @@
         (function() {
           var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
 
-          var checkoutButton = document.getElementById('checkout-button-sku_HEDdD279JTuASe');
+          var checkoutButton = document.getElementById('checkout-button-sku_HJ5uiaGLBl7GXq');
           checkoutButton.addEventListener('click', function () {
             // When the customer clicks on the button, redirect
             // them to Checkout.
             stripe.redirectToCheckout({
-              items: [{sku: 'sku_HEDdD279JTuASe', quantity: 1}],
-              
+              lineItems: [{price: 'sku_HJ5uiaGLBl7GXq', quantity: 1}],
+              mode: 'payment',
               // Do not rely on the redirect to the successUrl for fulfilling
               // purchases, customers may not always reach the success_url after
               // a successful payment.
@@ -73,7 +76,7 @@
       </div>
       <details class="pink">
         <summary>Allergy Advice</summary>
-        <strong>Contains gluten, eggs, dairy (milk), soya.</strong><br>
+        <strong>Contains gluten, soya.</strong><br>
         All of our cakes are made in an environment where cereals (gluten), diary (milk), eggs, lupin, nuts, peanuts, soya, sesame and sulphites are used. For this reason we cannot guarantee they are free from traces of these allergens. Please see our <a href="./faqs.html">FAQ page</a> for more information.
       </details>
       <details class="pink">
@@ -84,7 +87,7 @@
       </details>
     </div>
     <div class="hero-image-container">
-      <img class="hero-image pink" src="./img/cakes/oreo_brownie_large.jpg" alt="Postal Oreo Brownies">
+      <img class="hero-image pink" src="./img/cakes/vegan_biscoff_large.jpg" alt="Postal Vegan Biscoff Brownies">
     </div>
   </section>
   <section class="column">
