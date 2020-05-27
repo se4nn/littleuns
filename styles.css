@@ -470,6 +470,18 @@ details strong {
   border-color: #DEE7DA;
 }
 
+.banner {
+  color: #fff;
+  background: #252A22;
+  line-height: 24px;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  z-index: 10;
+}
+
 @media only screen and (max-width: 720px) {
 
   body {
@@ -503,6 +515,10 @@ details strong {
     height: auto;
     border-width: 16px;
     margin-bottom: 16px;
+  }
+  
+  .banner + nav {
+    margin-top: 40px;
   }
 
 }
