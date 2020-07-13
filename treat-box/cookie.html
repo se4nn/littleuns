@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="Littleuns - Cakes & Bakes">
+  <meta name="keywords" content="cakes local hand made handmade henham uk brownies cupcakes muffins tara geraghty">
+  <title>Littleuns - Cookie Dough Treat Box</title>
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel='shortcut icon' href='../img/favicon.png' type='image/png'>
+</head>
+<body>
+  <nav>
+    <a href="https://littleunscakes.com"><img class="logo" src="../img/logo.svg" alt="Littleuns Logo"></a>
+    <div class="links">
+      <a href="../treat-boxes.html"><img class="nav-link-image" src="../img/icons/lollies.svg" alt="Instagram Icon"><span>Treat Boxes</span></a>
+      <a href="../brownies.html"><img class="nav-link-image" src="../img/icons/brownie.svg" alt="Instagram Icon"><span>Brownies</span></a>
+      <a href="https://instagram.com/littleunscakes" target="_blank"><img src="../img/icons/instagram.svg" alt="Instagram Icon"></a>
+    </div>
+  </nav>
+  <section class="hero product">
+    <div class="description column">
+      <span class="tag tag-right">Free Hermes Delivery</span>
+      <h1>Cookie Dough Treat Box</h1>
+      <p>Three funfetti and smarties lollies, smothered in a thick layer of creamy white chocolate and covered in rainbow sprinkles PLUS three milk chocolate lollies, stuffed with raw cookie dough and BIG chunks of milk chocolate!</p>
+      <p>Delivered to the UK Only</p>
+      <div class="buy-container">
+        <p class="title">Cookie Dough Treat Box - Posted</p>
+        <!-- Load Stripe.js on your website. -->
+        <script src="https://js.stripe.com/v3"></script>
+
+        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+        <button
+          class="buy-button"
+          id="checkout-button-sku_Hdmil4pTljlgeZ"
+          role="link"
+          type="button"
+        >
+          Buy Now - £24
+        </button>
+
+        <div id="error-message"></div>
+
+        <script>
+        (function() {
+          var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
+
+          var checkoutButton = document.getElementById('checkout-button-sku_Hdmil4pTljlgeZ');
+          checkoutButton.addEventListener('click', function () {
+            // When the customer clicks on the button, redirect
+            // them to Checkout.
+            stripe.redirectToCheckout({
+              lineItems: [{price: 'sku_Hdmil4pTljlgeZ', quantity: 1}],
+              mode: 'payment',
+              // Do not rely on the redirect to the successUrl for fulfilling
+              // purchases, customers may not always reach the success_url after
+              // a successful payment.
+              // Instead use one of the strategies described in
+              // https://stripe.com/docs/payments/checkout/fulfillment
+              successUrl: 'https://littleunscakes.com/success',
+              cancelUrl: 'https://littleunscakes.com/treat-box/cookie.html',
+              shippingAddressCollection: {
+                allowedCountries: ['GB'],
+              }
+            })
+            .then(function (result) {
+              if (result.error) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer.
+                var displayError = document.getElementById('error-message');
+                displayError.textContent = result.error.message;
+              }
+            });
+          });
+        })();
+        </script>
+      </div>
+      <details class="pink">
+        <summary>Allergy Advice</summary>
+        <strong>Contains gluten, dairy (milk), soya</strong><br>
+        May contain traces of peanuts, nuts.<br>
+        All of our cakes are made in an environment where cereals (gluten), dairy (milk), eggs, lupin, nuts, peanuts, soya, sesame and sulphites are used. For this reason we cannot guarantee they are free from traces of these allergens. Please see our <a href="./faqs.html">FAQ page</a> for more information.
+      </details>
+      <details class="pink">
+        <summary>Information</summary>
+        Make it personal? If these blondies are a gift, you can send a short personalised message, which can be added once you have placed your order.<br>
+        All blondie trays are sold as 6” by 8” slabs for you to cut. This keeps the blondies as fresh as possible during transit, and means you can make those slices as big as you like. We won’t judge! (These slabs typically provide 8 large slices, or 16 blondie bites).<br>
+        Keep blondies in a sealed container in a cool, dry place. Brownies have a shelf life for up to five days at room temperature, or you can refrigerate them for up to two weeks (if they last that long!)
+      </details>
+    </div>
+    <div class="hero-image-container">
+      <img class="hero-image pink" src="../img/treat_box/cookie_large.jpg" alt="Postal Cookie Dough Treat Box">
+    </div>
+  </section>
+  <footer>
+    <p>© Littluns Cakes 2020</p>
+    <a href="./privacy.html" class="underline">Privacy Policy</a>
+    <a href="./faqs.html" class="underline">FAQs</a>
+    <div class="socials">
+      <a href="mailto:tara@littleunscakes.com"><img class="nav-link-image" src="../img/icons/email_white.svg" alt="Email Icon"></a>
+      <a href="https://instagram.com/littleunscakes"><img class="nav-link-image" src="../img/icons/instagram_white.svg" alt="Instagram Icon"></a>
+      <a href="https://facebook.com/littleunscakes"><img class="nav-link-image" src="../img/icons/facebook_white.svg" alt="Facebook Icon"></a>
+    </div>
+  </footer>
+</body>
