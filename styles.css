@@ -543,8 +543,17 @@ footer .socials {
     margin-left: 0;
   }
 
+  nav .links a {
+    margin: 0;
+    padding: 8px;
+  }
+
   nav .links a span{
     display: none;
+  }
+
+  .nav-link-image {
+    margin: 0;
   }
 
 }
