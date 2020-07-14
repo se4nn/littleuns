@@ -42,7 +42,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 80px 0;
+  padding: 40px 40px 0;
   overflow-x: hidden;
 }
 
@@ -52,7 +52,7 @@ nav, section, footer, .cake-selection, .description {
 }
 
 section {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .column {
@@ -277,12 +277,12 @@ details strong {
 .cake-box {
   display: flex;
   flex-direction: column;
-  max-width: 336px;
+  max-width: 376px;
   margin-bottom: 40px;
 }
 
 .cake-box .cake-image {
-  width: 320px;
+  width: 360px;
   border: solid 8px;
   border-radius: 16px;
   border-color: inherit;
