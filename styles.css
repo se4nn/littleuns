@@ -492,10 +492,9 @@ footer .socials {
   color: #fff;
   background: #252A22;
   line-height: 24px;
-  position: fixed;
-  top: 0;
   text-align: center;
-  width: 100%;
+  width: calc(100% + 64px);
+  margin: -40px 0 40px;
   padding: 8px;
   z-index: 10;
 }
@@ -534,10 +533,6 @@ footer .socials {
     border-width: 16px;
     margin-bottom: 16px;
   }
-  
-  .banner + nav {
-    margin-top: 40px;
-  }
 
   footer .socials {
     margin-left: 0;
@@ -554,6 +549,11 @@ footer .socials {
 
   .nav-link-image {
     margin: 0;
+  }
+
+  .banner {
+    width: calc(100% + 32px);
+    margin: -16px 0 40px;
   }
 
 }
