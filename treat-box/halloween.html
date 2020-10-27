@@ -30,55 +30,9 @@
       <p>Delivered to the UK Only</p>
       <div class="buy-container">
         <p class="title">Halloween Treat Box - Posted</p>
-
-        <!-- Load Stripe.js on your website. -->
-        <script src="https://js.stripe.com/v3"></script>
-
-        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-        <button
-          class="buy-button" 
-          id="checkout-button-sku_IBsJuP052SLl6B"
-          role="link"
-          type="button"
-          >
-          Buy Now - £24
+        <button class="buy-button">
+          Sold out
         </button>
-
-        <div id="error-message"></div>
-
-        <script>
-        (function() {
-        var stripe = Stripe('pk_live_g0zzP8oiInlPoiI0EHqdkEbS00ycmAbp7G');
-
-        var checkoutButton = document.getElementById('checkout-button-sku_IBsJuP052SLl6B');
-        checkoutButton.addEventListener('click', function () {
-            // When the customer clicks on the button, redirect
-            // them to Checkout.
-            stripe.redirectToCheckout({
-            lineItems: [{price: 'sku_IBsJuP052SLl6B', quantity: 1}],
-            mode: 'payment',
-            // Do not rely on the redirect to the successUrl for fulfilling
-            // purchases, customers may not always reach the success_url after
-            // a successful payment.
-            // Instead use one of the strategies described in
-            // https://stripe.com/docs/payments/checkout/fulfill-orders
-            successUrl: 'https://littleunscakes.com/success',
-            cancelUrl: 'https://littleunscakes.com/treat-box/halloween.html',
-            shippingAddressCollection: {
-              allowedCountries: ['GB'],
-            }
-            })
-            .then(function (result) {
-            if (result.error) {
-                // If `redirectToCheckout` fails due to a browser or network
-                // error, display the localized error message to your customer.
-                var displayError = document.getElementById('error-message');
-                displayError.textContent = result.error.message;
-            }
-            });
-        });
-        })();
-        </script>
         
       </div>
       <details class="pink">
